@@ -1,5 +1,7 @@
 @extends('app')
 
 @section('content')
-	@include('main.common',['somes'=>$somes])
+	<div class="container-fluid">
+		@include('main.common',['somes'=>$somes])
+	</div>
 @endsection
