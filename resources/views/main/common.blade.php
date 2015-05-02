@@ -13,8 +13,8 @@
             <th class="col-md-2">Компания или человек</th>
             <th class="col-md-4">Отзыв</th>
             <th class="col-md-4">Информация</th>
-            <th class="col-md-1">Тип</th>
-            <th class="col-md-1">Дата</th>
+            <th class="col-md-1 visible-md visible-lg">Тип</th>
+            <th class="col-md-1 visible-md visible-lg">Дата</th>
         </tr>
         @if( !isset($somes) || !count($somes) )
             <tr>
@@ -32,14 +32,14 @@
                     <td>
                         {{ $some->info }}
                     </td>
-                    <td>
+                    <td class="visible-md visible-lg">
                         @if( $some->type == 'person' )
                             человек
                         @else
                             компания
                         @endif
                     </td>
-                    <td>
+                    <td class="visible-md visible-lg">
                         {{ $some->created_at }}
                     </td>
                 </tr>
