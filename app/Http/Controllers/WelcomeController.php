@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Review;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +32,12 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		if( !$some = \Input::get('some') ){
+			$somes = Review::All();
+		}else{
+			$somes = Review::whereRaw(" deceiver like '%$some%' ")->get();
+		}
+		return view('home')->with(['somes'=>$somes]);
 	}
 
 }
